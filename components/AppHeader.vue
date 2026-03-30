@@ -4,9 +4,7 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center space-x-2">
-          <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-sm">黔</span>
-          </div>
+          <img src="/logo.png" alt="黔前Ai助手" class="w-8 h-8 rounded-lg object-cover">
           <span class="text-xl font-bold text-gray-900">黔前Ai助手</span>
         </NuxtLink>
 

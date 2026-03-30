@@ -9,49 +9,75 @@
         </p>
       </div>
 
-      <!-- Features Grid - 3列对称布局 -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <NuxtLink
-          v-for="feature in features"
+      <!-- Features List - 大图+文字布局 -->
+      <div class="space-y-20">
+        <div
+          v-for="(feature, index) in features"
           :key="feature.id"
-          :to="feature.link"
-          class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100/50 transition-all duration-300"
+          class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
+          :class="index % 2 === 1 ? 'lg:flex-row-reverse' : ''"
         >
-          <!-- Icon Header -->
-          <div class="flex items-center space-x-4 mb-4">
-            <div
-              class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-              :class="feature.iconBg"
-            >
-              <component :is="feature.icon" class="w-7 h-7" :class="feature.iconColor" />
-            </div>
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                {{ feature.title }}
-              </h3>
-            </div>
-            <ArrowRightIcon class="w-5 h-5 text-gray-300 group-hover:text-primary-500 group-hover:translate-x-1 transition-all" />
+          <!-- Image Side -->
+          <div class="w-full lg:w-1/2">
+            <NuxtLink :to="feature.link" class="block group">
+              <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl hover:border-primary-300 transition-all duration-500">
+                <!-- Feature Screenshot - 真实软件截图 -->
+                <img 
+                  :src="feature.image" 
+                  :alt="feature.title"
+                  class="w-full h-auto aspect-[16/10] object-cover object-top"
+                />
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/5 transition-colors duration-300"></div>
+              </div>
+            </NuxtLink>
           </div>
-          
-          <!-- Description -->
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ feature.description }}</p>
-          
-          <!-- Tags -->
-          <div v-if="feature.tags" class="flex flex-wrap gap-2">
-            <span
-              v-for="tag in feature.tags"
-              :key="tag"
-              class="px-2.5 py-1 text-xs font-medium rounded-full"
-              :class="feature.tagClass"
-            >
-              {{ tag }}
-            </span>
+
+          <!-- Content Side -->
+          <div class="w-full lg:w-1/2 text-center lg:text-left">
+            <NuxtLink :to="feature.link" class="group block">
+              <!-- Icon & Title -->
+              <div class="flex items-center justify-center lg:justify-start space-x-4 mb-4">
+                <div
+                  class="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110"
+                  :class="feature.iconBg"
+                >
+                  <component :is="feature.icon" class="w-7 h-7" :class="feature.iconColor" />
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                  {{ feature.title }}
+                </h3>
+              </div>
+              
+              <!-- Description -->
+              <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                {{ feature.description }}
+              </p>
+              
+              <!-- Tags -->
+              <div v-if="feature.tags" class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
+                <span
+                  v-for="tag in feature.tags"
+                  :key="tag"
+                  class="px-3 py-1.5 text-sm font-medium rounded-full"
+                  :class="feature.tagClass"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+
+              <!-- CTA -->
+              <div class="flex items-center justify-center lg:justify-start text-primary-600 font-medium group/link">
+                了解详情
+                <ArrowRightIcon class="w-5 h-5 ml-2 group-hover/link:translate-x-1 transition-transform" />
+              </div>
+            </NuxtLink>
           </div>
-        </NuxtLink>
+        </div>
       </div>
       
       <!-- Bottom CTA -->
-      <div class="mt-16 text-center">
+      <div class="mt-20 text-center">
         <p class="text-gray-600 mb-6">想了解更多功能详情？</p>
         <NuxtLink to="/docs" class="btn-primary">
           查看完整文档
@@ -80,10 +106,11 @@ const features = [
   {
     id: 'ai-chat',
     title: 'AI 智能对话',
-    description: '支持多轮对话、上下文理解，可调用多种AI模型进行智能问答，满足日常咨询、专业问题解答等需求。',
+    description: '支持多轮对话、上下文理解，可调用多种AI模型进行智能问答。无论是日常咨询、专业问题解答，还是创意写作，都能获得高质量的回复。',
     icon: ChatBubbleLeftRightIcon,
     iconBg: 'bg-blue-100',
     iconColor: 'text-blue-600',
+    image: '/images/feature-chat.png',
     link: '/docs/ai-chat',
     tags: ['GPT-4', 'Claude', '通义千问', 'DeepSeek'],
     tagClass: 'bg-blue-50 text-blue-700'
@@ -91,10 +118,11 @@ const features = [
   {
     id: 'knowledge-base',
     title: '知识库系统',
-    description: '支持上传PDF、Word、Excel、PPT等文档，自动建立向量索引，实现智能检索和问答。',
+    description: '支持上传PDF、Word、Excel、PPT等多种格式文档，自动建立向量索引。基于RAG技术实现精准的知识检索和智能问答，让知识管理更高效。',
     icon: FolderOpenIcon,
     iconBg: 'bg-green-100',
     iconColor: 'text-green-600',
+    image: '/images/feature-knowledge.png',
     link: '/docs/knowledge-base',
     tags: ['向量检索', 'PDF解析', '智能问答'],
     tagClass: 'bg-green-50 text-green-700'
@@ -102,10 +130,11 @@ const features = [
   {
     id: 'meeting',
     title: '会议纪要',
-    description: '支持语音转文字、自动提取会议要点、生成结构化会议纪要，大幅提升会议效率。',
+    description: '支持实时语音转文字、自动提取会议要点、生成结构化会议纪要。支持多人语音识别区分，大幅提升会议效率和信息留存质量。',
     icon: MicrophoneIcon,
     iconBg: 'bg-purple-100',
     iconColor: 'text-purple-600',
+    image: '/images/feature-meeting.png',
     link: '/docs/meeting',
     tags: ['语音转写', '智能摘要', '参会人管理'],
     tagClass: 'bg-purple-50 text-purple-700'
@@ -113,10 +142,11 @@ const features = [
   {
     id: 'skills',
     title: '技能系统',
-    description: '内置20+实用技能，涵盖文档生成、内容创作、数据分析、翻译、代码编写等多个领域。',
+    description: '内置20+实用技能，涵盖文档生成、内容创作、数据分析、翻译、代码编写等多个领域。支持自定义技能开发，打造专属AI助手。',
     icon: WrenchIcon,
     iconBg: 'bg-orange-100',
     iconColor: 'text-orange-600',
+    image: '/images/feature-skills.png',
     link: '/docs/skills',
     tags: ['文档生成', '内容创作', '数据分析'],
     tagClass: 'bg-orange-50 text-orange-700'
@@ -124,10 +154,11 @@ const features = [
   {
     id: 'document',
     title: '文档模式',
-    description: '专业的文档编辑环境，支持AI辅助写作、智能续写、格式调整，让文档创作更轻松。',
+    description: '专业的文档编辑环境，支持AI辅助写作、智能续写、格式调整。内置多种文档模板，一键生成各类公文、报告、方案。',
     icon: DocumentTextIcon,
     iconBg: 'bg-pink-100',
     iconColor: 'text-pink-600',
+    image: '/images/feature-document.png',
     link: '/docs/document',
     tags: ['AI写作', '智能排版', '模板库'],
     tagClass: 'bg-pink-50 text-pink-700'
@@ -135,46 +166,14 @@ const features = [
   {
     id: 'tender',
     title: '招投标助手',
-    description: '专为招投标场景设计，支持招标文件解析、投标书生成、资质管理等功能。',
+    description: '专为招投标场景设计，支持招标文件解析、投标书自动生成、资质文件管理。大幅提升投标工作效率和标书质量。',
     icon: DocumentMagnifyingGlassIcon,
     iconBg: 'bg-indigo-100',
     iconColor: 'text-indigo-600',
+    image: '/images/feature-tender.png',
     link: '/docs/tender',
     tags: ['标书生成', '资质管理', '文件解析'],
     tagClass: 'bg-indigo-50 text-indigo-700'
-  },
-  {
-    id: 'models',
-    title: '多模型集成',
-    description: '深度集成国内外主流大模型，用户可根据需求自由切换，获得最佳问答体验。',
-    icon: CpuChipIcon,
-    iconBg: 'bg-cyan-100',
-    iconColor: 'text-cyan-600',
-    link: '/docs/models',
-    tags: ['OpenAI', '通义千问', 'DeepSeek'],
-    tagClass: 'bg-cyan-50 text-cyan-700'
-  },
-  {
-    id: 'security',
-    title: '数据安全',
-    description: '支持私有化部署，数据完全本地存储，支持国密算法加密，满足政府和企业安全合规要求。',
-    icon: ShieldCheckIcon,
-    iconBg: 'bg-red-100',
-    iconColor: 'text-red-600',
-    link: '/docs/security',
-    tags: ['私有化部署', '国密算法', '权限管控'],
-    tagClass: 'bg-red-50 text-red-700'
-  },
-  {
-    id: 'api',
-    title: 'API接口',
-    description: '企业版和服务器版提供完整API，支持将AI能力集成到您的业务系统中。',
-    icon: CodeBracketIcon,
-    iconBg: 'bg-teal-100',
-    iconColor: 'text-teal-600',
-    link: '/docs/api',
-    tags: ['RESTful', 'SDK', 'Webhook'],
-    tagClass: 'bg-teal-50 text-teal-700'
   }
 ]
 </script>
