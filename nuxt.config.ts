@@ -19,13 +19,36 @@ export default defineNuxtConfig({
       ]
     }
   },
+  // 纯静态生成配置
   nitro: {
     prerender: {
-      routes: ['/']
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/download',
+        '/pricing',
+        '/community',
+        '/docs',
+        '/docs/getting-started',
+        '/docs/ai-chat',
+        '/docs/knowledge-base',
+        '/docs/meeting',
+        '/docs/skills',
+        '/docs/document',
+        '/docs/tender',
+        '/docs/models',
+        '/docs/security',
+        '/docs/api',
+        '/docs/deploy'
+      ]
     }
   },
-  ssr: false,
-  experimental: {
-    payloadExtraction: false
+  // 禁用服务端渲染，使用纯静态生成
+  ssr: true,
+  // 路由配置
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
   }
 })
