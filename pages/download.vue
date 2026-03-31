@@ -253,8 +253,8 @@ const versions = [
     requirements: ['统信UOS 20+ / 麒麟V10+', '4核 CPU', '8GB 内存', '2GB 存储空间', '国产CPU支持'],
     features: ['国产系统适配', '国密算法', '完全本地化', '政务场景优化', '专属支持'],
     obtainMethod: '请联系我们的政府服务团队获取',
-    ctaLink: '/community',
-    ctaText: '联系咨询'
+    ctaLink: '/sales',
+    ctaText: '咨询获取'
   },
   {
     id: 'enterprise',
@@ -278,8 +278,8 @@ const versions = [
     requirements: ['Windows 10+ / macOS 11+ / Android 8+ / iOS 14+', '4核 CPU', '8GB 内存', '2GB 存储空间'],
     features: ['团队协作', '企业知识库', '统一管理', '高级安全', '移动办公'],
     obtainMethod: '购买商业授权后即可下载部署',
-    ctaLink: '/pricing',
-    ctaText: '查看定价'
+    ctaLink: '/sales',
+    ctaText: '联系购买'
   },
   {
     id: 'server',
@@ -300,7 +300,7 @@ const versions = [
     requirements: ['Ubuntu 20.04+ / CentOS 7+ / Debian 11+', '8核 CPU', '32GB 内存', '50GB 存储空间', 'Docker支持'],
     features: ['大规模并发', '集群部署', 'API开放', '定制开发', '7x24支持'],
     obtainMethod: '联系销售获取部署方案和报价',
-    ctaLink: '/community',
+    ctaLink: '/sales',
     ctaText: '方案咨询'
   }
 ]

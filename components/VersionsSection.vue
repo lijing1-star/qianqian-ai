@@ -59,7 +59,7 @@
           <!-- CTA -->
           <div class="px-6 py-4 bg-gray-50">
             <NuxtLink 
-              to="/download" 
+              :to="version.ctaLink || '/download'" 
               class="block w-full text-center py-2.5 rounded-lg font-medium transition-colors"
               :class="version.buttonClass"
             >
@@ -115,6 +115,7 @@ const versions = [
     badgeClass: 'bg-blue-100 text-blue-800',
     buttonClass: 'bg-blue-600 text-white hover:bg-blue-700',
     cta: '咨询获取',
+    ctaLink: '/sales',
     platforms: [
       { name: 'UOS', icon: BuildingLibraryIcon },
     ],
@@ -136,6 +137,7 @@ const versions = [
     badgeClass: 'bg-purple-100 text-purple-800',
     buttonClass: 'bg-purple-600 text-white hover:bg-purple-700',
     cta: '联系购买',
+    ctaLink: '/sales',
     platforms: [
       { name: 'Windows', icon: ComputerDesktopIcon },
       { name: 'macOS', icon: ComputerDesktopIcon },
@@ -161,6 +163,7 @@ const versions = [
     badgeClass: 'bg-orange-100 text-orange-800',
     buttonClass: 'bg-orange-600 text-white hover:bg-orange-700',
     cta: '方案咨询',
+    ctaLink: '/sales',
     platforms: [
       { name: 'Linux', icon: ServerIcon },
       { name: 'macOS', icon: ServerIcon },
