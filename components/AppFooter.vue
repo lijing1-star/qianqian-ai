@@ -4,12 +4,10 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Brand -->
         <div class="col-span-2 md:col-span-1">
-          <div class="flex items-center space-x-2 mb-4">
-            <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-sm">黔</span>
-            </div>
+          <NuxtLink to="/" class="flex items-center space-x-2 mb-4">
+            <img src="/logo.png" alt="黔前Ai助手" class="w-8 h-8 rounded-lg object-cover">
             <span class="text-xl font-bold text-white">黔前Ai助手</span>
-          </div>
+          </NuxtLink>
           <p class="text-sm text-gray-400 mb-4">
             政企级AI智能助手，为政府、企业提供全方位的AI解决方案。
           </p>
@@ -57,8 +55,8 @@
           © {{ new Date().getFullYear() }} 黔前智算. 保留所有权利.
         </p>
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">隐私政策</a>
-          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">服务条款</a>
+          <NuxtLink to="/privacy" class="text-sm text-gray-400 hover:text-white transition-colors">隐私政策</NuxtLink>
+          <NuxtLink to="/terms" class="text-sm text-gray-400 hover:text-white transition-colors">服务条款</NuxtLink>
         </div>
       </div>
     </div>
@@ -71,7 +69,7 @@ const footerLinks = {
     { name: '功能特性', href: '/#features' },
     { name: '下载中心', href: '/download' },
     { name: '定价方案', href: '/pricing' },
-    { name: '更新日志', href: '/docs/changelog' },
+    { name: '更新日志', href: '/changelog' },
   ],
   resources: [
     { name: '使用文档', href: '/docs' },
@@ -80,10 +78,10 @@ const footerLinks = {
     { name: '常见问题', href: '/#faq' },
   ],
   support: [
-    { name: '联系我们', href: '/community' },
-    { name: '社区论坛', href: '/community' },
-    { name: '反馈建议', href: '/community' },
-    { name: '企业咨询', href: '/community' },
+    { name: '联系我们', href: '/community#contact' },
+    { name: '社区论坛', href: '/community#forum' },
+    { name: '反馈建议', href: '/community#feedback' },
+    { name: '企业咨询', href: '/enterprise' },
   ]
 }
 </script>

@@ -11,8 +11,12 @@
     </section>
 
     <!-- Contact Cards -->
-    <section class="py-16">
+    <section id="contact" class="py-16 scroll-mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-bold text-gray-900">联系我们</h2>
+          <p class="mt-2 text-gray-600">选择适合您的方式与我们取得联系</p>
+        </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div 
             v-for="channel in contactChannels" 
@@ -39,105 +43,82 @@
       </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="py-16 bg-white">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Community Forum -->
+    <section id="forum" class="py-16 bg-white scroll-mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-2xl font-bold text-gray-900">联系我们</h2>
-          <p class="mt-2 text-gray-600">有问题或建议？请填写以下表单与我们联系</p>
+          <h2 class="text-2xl font-bold text-gray-900">社区论坛</h2>
+          <p class="mt-2 text-gray-600">与其他用户交流使用心得、分享技巧、提问求助</p>
         </div>
-
-        <form class="space-y-6" @submit.prevent="submitForm">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">姓名</label>
-              <input 
-                type="text" 
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
-                placeholder="您的姓名"
-              >
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
-              <input 
-                type="email" 
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
-                placeholder="your@email.com"
-              >
-            </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">问题求助</h3>
+            <p class="text-sm text-gray-600 mb-4">遇到问题？在这里寻求帮助</p>
+            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">咨询类型</label>
-            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors">
-              <option>产品咨询</option>
-              <option>技术支持</option>
-              <option>商务合作</option>
-              <option>加入我们</option>
-              <option>其他</option>
-            </select>
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">使用技巧</h3>
+            <p class="text-sm text-gray-600 mb-4">分享你的使用心得和技巧</p>
+            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">留言内容</label>
-            <textarea 
-              rows="5" 
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors resize-none"
-              placeholder="请详细描述您的需求或问题..."
-            ></textarea>
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">功能建议</h3>
+            <p class="text-sm text-gray-600 mb-4">提出你的功能改进建议</p>
+            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
           </div>
-          <button type="submit" class="w-full btn-primary py-4 text-lg">
-            提交留言
-          </button>
-        </form>
+        </div>
       </div>
     </section>
 
-    <!-- Enterprise Contact -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">企业咨询服务</h2>
-              <p class="text-primary-100 mb-6">
-                为企业提供定制化AI解决方案，包括私有化部署、定制开发、培训服务等。
-              </p>
-              <div class="space-y-3 text-primary-100">
-                <div class="flex items-center">
-                  <PhoneIcon class="w-5 h-5 mr-3" />
-                  <span>400-XXX-XXXX</span>
-                </div>
-                <div class="flex items-center">
-                  <EnvelopeIcon class="w-5 h-5 mr-3" />
-                  <span>enterprise@qianqianai.com</span>
-                </div>
-                <div class="flex items-center">
-                  <ClockIcon class="w-5 h-5 mr-3" />
-                  <span>工作日 9:00-18:00</span>
-                </div>
+    <!-- Feedback -->
+    <section id="feedback" class="py-16 scroll-mt-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">反馈建议</h2>
+            <p class="mt-2 text-gray-600">您的建议是我们改进的动力</p>
+          </div>
+          <form class="space-y-6" @submit.prevent="submitForm">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">姓名</label>
+                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 outline-none" placeholder="您的姓名">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
+                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 outline-none" placeholder="your@email.com">
               </div>
             </div>
-            <div class="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 class="text-lg font-semibold text-white mb-4">服务范围</h3>
-              <ul class="space-y-2 text-primary-100">
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  企业版购买咨询
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  私有化部署方案
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  定制化开发服务
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  培训和技术支持
-                </li>
-              </ul>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">反馈类型</label>
+              <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 outline-none">
+                <option>功能建议</option>
+                <option>问题反馈</option>
+                <option>其他</option>
+              </select>
             </div>
-          </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">详细描述</label>
+              <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 outline-none resize-none" placeholder="请详细描述您的建议..."></textarea>
+            </div>
+            <button type="submit" class="w-full btn-primary py-4">提交反馈</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise CTA -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">需要企业级服务？</h2>
+          <p class="text-primary-100 mb-8 max-w-2xl mx-auto">
+            为企业客户提供私有化部署、定制开发、培训支持等专业服务
+          </p>
+          <NuxtLink to="/enterprise" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+            了解企业方案
+            <ArrowRightIcon class="w-5 h-5 ml-2" />
+          </NuxtLink>
         </div>
       </div>
     </section>
