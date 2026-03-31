@@ -5,7 +5,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900">联系我们</h1>
         <p class="mt-4 text-lg text-gray-600">
-          选择适合您的方式与我们取得联系
+          我们期待与您建立联系，为您提供专业的AI解决方案
         </p>
       </div>
     </section>
@@ -13,26 +13,105 @@
     <!-- Contact Cards -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div 
-            v-for="channel in contactChannels" 
-            :key="channel.title"
-            class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow"
-          >
-            <div 
-              class="w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4"
-              :class="channel.iconBg"
-            >
-              <component :is="channel.icon" class="w-7 h-7" :class="channel.iconColor" />
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- 商务合作 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-blue-100">
+              <BriefcaseIcon class="w-7 h-7 text-blue-600" />
             </div>
-            <h3 class="font-semibold text-gray-900">{{ channel.title }}</h3>
-            <p class="mt-2 text-sm text-gray-600">{{ channel.description }}</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">商务合作</h3>
+            <p class="text-gray-600 mb-6">企业采购、定制化需求、战略合作</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-gray-700">
+                <EnvelopeIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span>business@qqai.com</span>
+              </div>
+              <div class="flex items-center text-gray-700">
+                <PhoneIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span>0851-8888-8888</span>
+              </div>
+            </div>
             <a 
-              :href="channel.link"
-              class="mt-4 inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+              href="mailto:business@qqai.com"
+              class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
-              {{ channel.action }}
-              <ArrowRightIcon class="w-4 h-4 ml-1" />
+              <PaperAirplaneIcon class="w-5 h-5 mr-2" />
+              发送邮件
+            </a>
+          </div>
+
+          <!-- 技术支持 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-green-100">
+              <WrenchIcon class="w-7 h-7 text-green-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">技术支持</h3>
+            <p class="text-gray-600 mb-6">产品使用、技术咨询、故障反馈</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-gray-700">
+                <EnvelopeIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span>support@qqai.com</span>
+              </div>
+              <div class="flex items-center text-gray-700">
+                <ClockIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span>7×24 小时</span>
+              </div>
+            </div>
+            <a 
+              href="mailto:support@qqai.com"
+              class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+            >
+              <TicketIcon class="w-5 h-5 mr-2" />
+              提交工单
+            </a>
+          </div>
+
+          <!-- 客服热线 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-orange-100">
+              <PhoneIcon class="w-7 h-7 text-orange-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">客服热线</h3>
+            <p class="text-gray-600 mb-6">7×24 小时在线服务</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-gray-700">
+                <PhoneIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span class="text-2xl font-bold text-orange-600">400-888-8888</span>
+              </div>
+              <div class="flex items-center text-gray-700">
+                <ChatBubbleLeftRightIcon class="w-5 h-5 mr-3 text-gray-400" />
+                <span>在线客服</span>
+              </div>
+            </div>
+            <a 
+              href="tel:400-888-8888"
+              class="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
+            >
+              <PhoneIcon class="w-5 h-5 mr-2" />
+              立即拨打
+            </a>
+          </div>
+
+          <!-- 公司地址 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-purple-100">
+              <MapPinIcon class="w-7 h-7 text-purple-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">公司地址</h3>
+            <p class="text-gray-600 mb-6">欢迎来访洽谈</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-start text-gray-700">
+                <MapPinIcon class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
+                <span>贵州省贵阳市观山湖区<br>大数据综合保税区 A 栋 18 层</span>
+              </div>
+            </div>
+            <a 
+              href="https://map.baidu.com/search/%E8%B4%B5%E9%98%B3%E5%B8%82%E8%A7%82%E5%B1%B1%E6%B9%96%E5%8C%BA%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%BC%E5%90%88%E4%BF%9D%E7%A8%8E%E5%8C%BA"
+              target="_blank"
+              class="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+            >
+              <MapIcon class="w-5 h-5 mr-2" />
+              查看地图
             </a>
           </div>
         </div>
@@ -90,70 +169,21 @@
         </form>
       </div>
     </section>
-
-    <!-- Enterprise Contact -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">企业咨询服务</h2>
-              <p class="text-primary-100 mb-6">
-                为企业提供定制化AI解决方案，包括私有化部署、定制开发、培训服务等。
-              </p>
-              <div class="space-y-3 text-primary-100">
-                <div class="flex items-center">
-                  <PhoneIcon class="w-5 h-5 mr-3" />
-                  <span>400-XXX-XXXX</span>
-                </div>
-                <div class="flex items-center">
-                  <EnvelopeIcon class="w-5 h-5 mr-3" />
-                  <span>enterprise@qianqianai.com</span>
-                </div>
-                <div class="flex items-center">
-                  <ClockIcon class="w-5 h-5 mr-3" />
-                  <span>工作日 9:00-18:00</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 class="text-lg font-semibold text-white mb-4">服务范围</h3>
-              <ul class="space-y-2 text-primary-100">
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  企业版购买咨询
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  私有化部署方案
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  定制化开发服务
-                </li>
-                <li class="flex items-center">
-                  <CheckIcon class="w-5 h-5 mr-2" />
-                  培训和技术支持
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup>
 import {
-  ArrowRightIcon,
-  ChatBubbleLeftRightIcon,
-  EnvelopeIcon,
-  UserGroupIcon,
-  BookOpenIcon,
+  BriefcaseIcon,
+  WrenchIcon,
   PhoneIcon,
+  MapPinIcon,
+  EnvelopeIcon,
   ClockIcon,
-  CheckIcon
+  ChatBubbleLeftRightIcon,
+  MapIcon,
+  PaperAirplaneIcon,
+  TicketIcon
 } from '@heroicons/vue/24/outline'
 
 useHead({
@@ -162,45 +192,6 @@ useHead({
     { name: 'description', content: '联系黔前Ai助手团队，获取技术支持、商务合作、企业咨询等服务。' }
   ]
 })
-
-const contactChannels = [
-  {
-    title: '技术交流',
-    description: '加入技术交流群，与其他用户交流使用经验',
-    icon: ChatBubbleLeftRightIcon,
-    iconBg: 'bg-blue-100',
-    iconColor: 'text-blue-600',
-    link: '#',
-    action: '加入群聊'
-  },
-  {
-    title: '用户论坛',
-    description: '在论坛提问、分享经验、获取帮助',
-    icon: UserGroupIcon,
-    iconBg: 'bg-green-100',
-    iconColor: 'text-green-600',
-    link: '#',
-    action: '访问论坛'
-  },
-  {
-    title: '文档中心',
-    description: '查看详细的使用文档和开发指南',
-    icon: BookOpenIcon,
-    iconBg: 'bg-purple-100',
-    iconColor: 'text-purple-600',
-    link: '/docs',
-    action: '查看文档'
-  },
-  {
-    title: '邮件支持',
-    description: '发送邮件获取专业技术支持',
-    icon: EnvelopeIcon,
-    iconBg: 'bg-orange-100',
-    iconColor: 'text-orange-600',
-    link: 'mailto:support@qianqianai.com',
-    action: '发送邮件'
-  }
-]
 
 const submitForm = () => {
   alert('感谢您的留言！我们会尽快与您联系。')
