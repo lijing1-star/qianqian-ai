@@ -74,12 +74,12 @@ const footerLinks = {
   resources: [
     { name: '使用文档', href: '/docs' },
     { name: 'API文档', href: '/docs/api' },
-    { name: '开发指南', href: '/docs/dev' },
+    { name: '开发指南', href: '/docs/dev-guide' },
     { name: '常见问题', href: '/#faq' },
   ],
   support: [
-    { name: '联系我们', href: '/community#contact' },
-    { name: '社区论坛', href: '/community#forum' },
+    { name: '联系我们', href: '/contact' },
+    { name: '社区论坛', href: '/community' },
     { name: '反馈建议', href: '/community#feedback' },
     { name: '企业咨询', href: '/enterprise' },
   ]

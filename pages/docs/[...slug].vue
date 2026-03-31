@@ -149,7 +149,8 @@ const sidebarItems = [
   { title: '模型配置', path: '/docs/models' },
   { title: '数据安全', path: '/docs/security' },
   { title: 'API文档', path: '/docs/api' },
-  { title: '部署指南', path: '/docs/deploy' }
+  { title: '部署指南', path: '/docs/deploy' },
+  { title: '开发指南', path: '/docs/dev-guide' }
 ]
 
 // Document content data
@@ -584,6 +585,88 @@ services:
       '生产环境建议配置SSL证书',
       '定期备份数据库和重要文件',
       '配置监控告警及时发现异常'
+    ]
+  },
+  'dev-guide': {
+    title: '开发指南',
+    description: '开发者指南，包括插件开发、API集成、自定义技能开发等技术文档。',
+    highlights: [
+      { title: '插件开发', desc: '开发自定义插件', icon: CodeBracketIcon },
+      { title: 'API集成', desc: 'RESTful API调用', icon: RocketLaunchIcon },
+      { title: '技能开发', desc: '自定义AI技能', icon: WrenchIcon },
+      { title: 'SDK接入', desc: '多语言SDK使用', icon: BookOpenIcon }
+    ],
+    sections: [
+      {
+        title: '环境准备',
+        content: '开始开发前，请确保您的开发环境满足以下要求：',
+        list: [
+          'Node.js 18+ 或 Python 3.10+',
+          'Git版本控制工具',
+          '代码编辑器（推荐VS Code）',
+          '黔前Ai助手开发者账号'
+        ]
+      },
+      {
+        title: '插件开发',
+        content: '黔前Ai助手支持插件扩展机制，开发者可以创建自定义插件来扩展功能。插件采用JavaScript/TypeScript开发，通过标准化接口与主程序通信。',
+        code: `// 插件示例
+export default {
+  name: 'my-plugin',
+  version: '1.0.0',
+  
+  // 插件激活时调用
+  activate(context) {
+    // 注册命令
+    context.registerCommand('myCommand', () => {
+      // 插件逻辑
+    });
+  },
+  
+  // 插件停用时调用
+  deactivate() {
+    // 清理资源
+  }
+};`
+      },
+      {
+        title: '技能开发',
+        content: '自定义技能开发允许您创建专属的AI助手能力。技能由提示词模板、参数定义和处理逻辑组成。',
+        list: [
+          '定义技能元数据（名称、描述、版本）',
+          '编写提示词模板',
+          '配置输入参数',
+          '实现后处理逻辑',
+          '打包并发布技能'
+        ]
+      },
+      {
+        title: 'API集成',
+        content: '通过RESTful API将黔前Ai助手能力集成到您的应用中。API支持对话、知识库查询、文档处理等功能。'
+      },
+      {
+        title: 'SDK使用',
+        content: '官方提供多语言SDK，简化集成开发工作。支持JavaScript、Python、Java、Go等主流语言。',
+        code: `// JavaScript SDK示例
+import { QianQianAI } from '@qianqian-ai/sdk';
+
+const client = new QianQianAI({
+  apiKey: 'your-api-key',
+  baseURL: 'https://api.qianqian-ai.com'
+});
+
+// 发起对话
+const response = await client.chat.completions.create({
+  model: 'gpt-4',
+  messages: [{ role: 'user', content: '你好' }]
+});`
+      }
+    ],
+    tips: [
+      '阅读完整API文档了解所有接口',
+      '使用开发者工具调试插件',
+      '加入开发者社区获取支持',
+      '遵循最佳实践编写高质量代码'
     ]
   }
 }

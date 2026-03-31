@@ -10,12 +10,12 @@
       </div>
     </section>
 
-    <!-- Contact Cards -->
-    <section id="contact" class="py-16 scroll-mt-16">
+    <!-- Community Resources -->
+    <section id="forum" class="py-16 scroll-mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-2xl font-bold text-gray-900">联系我们</h2>
-          <p class="mt-2 text-gray-600">选择适合您的方式与我们取得联系</p>
+          <h2 class="text-2xl font-bold text-gray-900">社区资源</h2>
+          <p class="mt-2 text-gray-600">探索黔前Ai助手的各类社区资源</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div 
@@ -38,33 +38,6 @@
               {{ channel.action }}
               <ArrowRightIcon class="w-4 h-4 ml-1" />
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Community Forum -->
-    <section id="forum" class="py-16 bg-white scroll-mt-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-2xl font-bold text-gray-900">社区论坛</h2>
-          <p class="mt-2 text-gray-600">与其他用户交流使用心得、分享技巧、提问求助</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-gray-50 rounded-xl p-6">
-            <h3 class="font-semibold text-gray-900 mb-3">问题求助</h3>
-            <p class="text-sm text-gray-600 mb-4">遇到问题？在这里寻求帮助</p>
-            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
-          </div>
-          <div class="bg-gray-50 rounded-xl p-6">
-            <h3 class="font-semibold text-gray-900 mb-3">使用技巧</h3>
-            <p class="text-sm text-gray-600 mb-4">分享你的使用心得和技巧</p>
-            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
-          </div>
-          <div class="bg-gray-50 rounded-xl p-6">
-            <h3 class="font-semibold text-gray-900 mb-3">功能建议</h3>
-            <p class="text-sm text-gray-600 mb-4">提出你的功能改进建议</p>
-            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm font-medium">进入板块 →</a>
           </div>
         </div>
       </div>
