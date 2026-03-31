@@ -38,7 +38,7 @@
       <!-- Contact CTA -->
       <div class="mt-12 text-center">
         <p class="text-gray-600 mb-4">还有其他问题？</p>
-        <NuxtLink to="/community" class="btn-primary">
+        <NuxtLink to="/contact" class="btn-primary">
           联系我们
         </NuxtLink>
       </div>

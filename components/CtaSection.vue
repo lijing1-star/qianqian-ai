@@ -12,7 +12,7 @@
           <ArrowDownTrayIcon class="w-5 h-5 mr-2" />
           免费下载
         </NuxtLink>
-        <NuxtLink to="/community" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-colors">
+        <NuxtLink to="/contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-colors">
           <ChatBubbleLeftRightIcon class="w-5 h-5 mr-2" />
           联系我们
         </NuxtLink>
